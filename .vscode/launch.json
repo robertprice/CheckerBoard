@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "amiga-assembly",
+            "request": "launch",
+            "name": "FS-UAE",
+            "stopOnEntry": false,
+            "program": "${workspaceFolder}/uae/dh0/Checkerboard",
+            "remoteProgram": "SYS:Checkerboard",
+            "emulatorType": "fs-uae",
+            "emulatorArgs": [
+                "--hard_drive_0=${workspaceFolder}/uae/dh0",
+                "--automatic_input_grab=0"
+            ],
+            "preLaunchTask": "amigaassembly: build"
+        },
+        {
+            "type": "amiga-assembly",
+            "request": "launch",
+            "name": "FS-UAE A1200",
+            "stopOnEntry": false,
+            "program": "${workspaceFolder}/uae/dh0/Checkerboard",
+            "remoteProgram": "SYS:Checkerboard",
+            "emulatorType": "fs-uae",
+            "emulatorArgs": [
+                "--hard_drive_0=${workspaceFolder}/uae/dh0",
+                "--automatic_input_grab=0",
+				"--amiga_model=A1200"
+            ],
+            "preLaunchTask": "amigaassembly: build"
+        },
+        {
+            "type": "amiga-assembly",
+            "request": "launch",
+            "name": "FS-UAE Debug",
+            "stopOnEntry": true,
+            "program": "${workspaceFolder}/uae/dh0/Checkerboard",
+            "remoteProgram": "SYS:Checkerboard",
+            "emulatorType": "fs-uae",
+            "emulatorArgs": [
+                "--hard_drive_0=${workspaceFolder}/uae/dh0",
+                "--automatic_input_grab=0"
+            ],
+            "preLaunchTask": "amigaassembly: build"
+        },
+        {
+            "type": "amiga-assembly",
+            "request": "launch",
+            "name": "WinUAE Debug",
+            "stopOnEntry": true,
+            "program": "${workspaceFolder}/uae/dh0/Checkerboard",
+            "remoteProgram": "SYS:Checkerboard",
+            "emulatorType": "winuae",
+            "emulatorArgs": [
+                "-s",
+                "filesystem=rw,dh0:${workspaceFolder}/uae/dh0",
+            ],
+            "preLaunchTask": "amigaassembly: build"
+        }
+    ]
+}
