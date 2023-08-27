@@ -135,13 +135,14 @@ CList
 			dc.w	 $106,$c00								; AGA sprites, palette and dual playfield reset - bplcon3
 			dc.w	 $1FC,0									; AGA sprites and burst reset - fmode
 
-			dc.w     DIWSTRT,$0568                          ; v=5,  h=104
-            dc.w     DIWSTOP,$40d1                          ; v=64, h=209
-            dc.w     DDFSTRT,$0028,DDFSTOP,$00d8
+			dc.w     DIWSTRT,$0568                          ; v=5, h=104
+            dc.w     DIWSTOP,$40d1                          ; v=(256)+64=320, h=209
+            dc.w     DDFSTRT,$0028							; H6 and H4 set - Extra Wide (max)
+			dc.w	 DDFSTOP,$00d8							; H8, H7, H5, and H4 set - Wide (max)
             dc.w     BPL1MOD,$0000,BPL2MOD,$0000
 
             dc.w     $b609,$fffe                            ; Wait for vpos >= 0xb6 and hpos >= 0x8
-            dc.w     BPLCON0,$1200                          ; 1 bit plane, enable colour burst.
+            dc.w     BPLCON0,$1200                          ; 1 bit plane, enable composite colour.
 BPL         dc.w     BPL1PTH,$0000,BPL1PTL,$0000
             dc.w     COLOR00,$0000,COLOR01,$0000
 
